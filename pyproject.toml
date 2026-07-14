@@ -23,6 +23,7 @@ include = ["api/src"]
 [tool.pytest.ini_options]
 testpaths = ["api/tests", "tests"]
 addopts = "-v --tb=short"
+asyncio_mode = "auto"
 
 [dependency-groups]
 dev = [
