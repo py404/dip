@@ -4,24 +4,24 @@
 
 ### Repo & tooling init
 
-- [ ] git init + create GitHub repo (private)
-- [ ] Add .gitignore (Python, Docker, IDE, macOS)
-- [ ] Add README.md skeleton (title, badges placeholder, TOC)
-- [ ] Add LICENSE (MIT)
-- [ ] Install uv for Python dependency management
-- [ ] Create pyproject.toml with ruff + mypy + pytest config
-- [ ] Install pre-commit; add .pre-commit-config.yaml (ruff, mypy, end-of-file-fixer, trailing-whitespace)
-- [ ] Add .editorconfig
-- [ ] Create folder structure: src/, tests/, docs/, infra/, scripts/
-- [ ] Scaffold FastAPI app with single /health endpoint
-- [ ] Write first pytest test asserting /health returns 200
-- [ ] Add Makefile targets: dev, test, lint, up, down, logs, clean
-- [ ] Create .env.example with placeholder vars
-- [ ] Add pydantic-settings config loader reading .env
-- [ ] Write Dockerfile.api (multi-stage: builder + slim runtime)
-- [ ] Write docker-compose.yml skeleton with api service only
-- [ ] Run make up && curl /health to confirm skeleton boots
-- [ ] Commit initial scaffold as first commit
+- [x] git init + create GitHub repo (private)
+- [x] Add .gitignore (Python, Docker, IDE, macOS)
+- [x] Add README.md skeleton (title, badges placeholder, TOC)
+- [x] Add LICENSE (MIT)
+- [x] Install uv for Python dependency management
+- [x] Create pyproject.toml with ruff + mypy + pytest config
+- [x] Install pre-commit; add .pre-commit-config.yaml (ruff, mypy, end-of-file-fixer, trailing-whitespace)
+- [x] Add .editorconfig
+- [x] Create folder structure: src/, tests/, docs/, infra/, scripts/
+- [x] Scaffold FastAPI app with single /health endpoint
+- [x] Write first pytest test asserting /health returns 200
+- [x] Add Makefile targets: dev, test, lint, up, down, logs, clean
+- [x] Create .env.example with placeholder vars
+- [x] Add pydantic-settings config loader reading .env
+- [x] Write Dockerfile.api (multi-stage: builder + slim runtime)
+- [x] Write docker-compose.yml skeleton with api service only
+- [x] Run make up && curl /health to confirm skeleton boots
+- [x] Commit initial scaffold as first commit
 
 ### Local secrets & config baseline
 
