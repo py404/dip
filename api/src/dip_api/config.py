@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     api_port: int = 8000
     log_level: str = "info"
 
-    database_url: str
+    database_url: str = "postgresql://dip:dip@localhost:5432/dip"
     redis_url: str = "redis://localhost:6379/0"
 
     aws_access_key_id: str = "test"
