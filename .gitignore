@@ -204,4 +204,7 @@ pyrightconfig.json
 .history
 .ionide
 
+### ministack related ###
+ministack/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,database,dotenv

@@ -25,8 +25,8 @@ services:
       - S3_PERSIST=1
       - LOG_LEVEL=INFO
     volumes:
-      - ./data/state:/tmp/ministack-state
-      - ./data/s3:/tmp/ministack-data/s3
+      - ./ministack/state:/tmp/ministack-state
+      - ./ministack/s3:/tmp/ministack-data/s3
     healthcheck:
       test:
         [
