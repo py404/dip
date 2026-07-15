@@ -15,3 +15,26 @@ services:
       retries: 3
       start_period: 10s
     restart: unless-stopped
+
+  ministack:
+    image: ministackorg/ministack:1.4.2
+    ports:
+      - "4566:4566"
+    environment:
+      - PERSIST_STATE=1
+      - S3_PERSIST=1
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data/state:/tmp/ministack-state
+      - ./data/s3:/tmp/ministack-data/s3
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:4566/_ministack/health')",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
