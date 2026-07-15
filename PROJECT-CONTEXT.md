@@ -29,7 +29,7 @@ A production-grade **agentic RAG** platform, not a notebook demo and not a fixed
 ```mermaid
 flowchart TD
     U[User] -->|upload doc| API[FastAPI]
-    API --> S3[LocalStack S3]
+    API --> S3[MiniStack S3]
     API --> PF[Prefect flow]
     PF --> DL[Docling parse]
     DL --> CH[Chunk]
@@ -66,7 +66,7 @@ All documents are synthetic/dummy — no real legal, financial, or PHI data. Thi
 | LLM + embeddings | **Ollama** — `qwen3:14b`, `nomic-embed-text` | Fully local, zero API cost, zero data leaving the machine |
 | Vector store | **pgvector** on Postgres | One database for relational + vector data, no extra service |
 | Cache | **Redis** | Semantic query cache |
-| Cloud emulation | **LocalStack** (S3, SQS, Secrets Manager, STS) | Zero real AWS spend; Terraform in Phase 5 targets LocalStack endpoints, not real AWS |
+| Cloud emulation | **MiniStack** (S3, SQS, Secrets Manager, STS) | Zero real AWS spend; free, MIT-licensed LocalStack drop-in; Terraform in Phase 5 targets MiniStack endpoints, not real AWS |
 | Local CI/CD | **Jenkins** (Docker) + **SonarQube** (quality gate) + **Trivy** (image scan) | Runs entirely on your desktop, pc or laptop; GitHub trigger via ngrok webhook or Poll SCM |
 | Local Kubernetes | **kind or k3d** + **Helm** | Proves k8s config before any real cluster exists |
 | Eval | **RAGAs** (faithfulness/recall) + **LangSmith** (tracing) + golden dataset | CI gate blocks a merge that regresses answer quality |
@@ -75,12 +75,12 @@ All documents are synthetic/dummy — no real legal, financial, or PHI data. Thi
 
 ## Build philosophy — 8 phases, in order, all local
 
-1. **Scaffold & Bootstrap** — repo, tooling, skeleton FastAPI app, LocalStack baseline.
+1. **Scaffold & Bootstrap** — repo, tooling, skeleton FastAPI app, MiniStack baseline.
 2. **System Design** — problem brief, diagrams, ADRs, failure modes, capacity math.
 3. **Core Build (Docker Compose)** — infra, ingestion, retrieval, generation, eval harness, multi-tenancy.
 4. **Local CI/CD (Jenkins)** — Jenkins + SonarQube bootstrap, Jenkinsfile pipeline, quality gates.
 5. **Local Kubernetes (kind/k3d)** — Helm charts, scaling/scheduling, ingress, verify from-scratch boot.
-6. **Terraform + LocalStack** — IaC modules targeting LocalStack, deploy/destroy/redeploy proof.
+6. **Terraform + MiniStack** — IaC modules targeting MiniStack, deploy/destroy/redeploy proof.
 7. **Testing & Hardening** — automated test suite, load/chaos testing, security scanning.
 8. **Documentation & Portfolio Packaging** — README, design.md, demo video, final CI proof.
 
@@ -90,4 +90,4 @@ All documents are synthetic/dummy — no real legal, financial, or PHI data. Thi
 - A query returns a cited, grounded answer via hybrid retrieval + rerank.
 - The agentic grading loop demonstrably catches at least one insufficient-context case per tenant (legal/finance/healthcare) and reformulates/retries instead of generating an ungrounded answer.
 - RAGAs eval score is tracked and a CI gate blocks a regression (proven with a deliberately bad change).
-- The whole stack boots from a clean clone via Docker Compose, deploys cleanly to a local kind/k3d cluster via Helm, and `terraform apply` stands up the LocalStack-backed resources — all reproducibly, all without touching a real cloud account.
+- The whole stack boots from a clean clone via Docker Compose, deploys cleanly to a local kind/k3d cluster via Helm, and `terraform apply` stands up the MiniStack-backed resources — all reproducibly, all without touching a real cloud account.
