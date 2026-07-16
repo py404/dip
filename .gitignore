@@ -207,11 +207,7 @@ pyrightconfig.json
 ### ministack related ###
 ministack/
 
-### graphify specifiic / local-only ###
-graphify-out/.graphify_labels.json
-graphify-out/.graphify_python
-graphify-out/.graphify_root
-graphify-out/cost.json
-graphify-out/cache/
+### graphify specific / local-only ###
+graphify-out/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,database,dotenv
