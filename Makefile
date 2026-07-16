@@ -1,3 +1,15 @@
+ifneq ($(wildcard .env.local),)
+	include .env.local
+	export AWS_ACCESS_KEY_ID
+	export AWS_SECRET_ACCESS_KEY
+	export AWS_DEFAULT_REGION
+	export AWS_ENDPOINT_URL
+endif
+
+.PHONY: seed-secrets
+seed-secrets:
+	bash scripts/create-secrets.sh
+
 .PHONY: dev test lint up down logs clean
 
 dev:
