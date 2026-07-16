@@ -27,6 +27,7 @@ services:
     volumes:
       - ./ministack/state:/tmp/ministack-state
       - ./ministack/s3:/tmp/ministack-data/s3
+      - ./scripts/ministack-init.sh:/etc/localstack/init/ready.d/ministack-init.sh
     healthcheck:
       test:
         [
