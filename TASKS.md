@@ -25,8 +25,8 @@
 
 ### Local secrets & config baseline
 
-- [ ] Add docker-compose service: ministack (S3, SQS, Secrets Manager, STS)
-- [ ] Write scripts/ministack-init.sh to bootstrap S3 bucket + SQS queue on container start
+- [x] Add docker-compose service: ministack (S3, SQS, Secrets Manager, STS)
+- [x] Write scripts/ministack-init.sh to bootstrap S3 bucket + SQS queue on container start
 - [ ] Set AWS_ENDPOINT_URL=http://localhost:4566 in .env.local and export in Makefile for local AWS CLI calls
 - [ ] Add startup config validation (fail fast on missing required env vars)
 - [ ] Split .env.local vs .env.example
@@ -34,8 +34,8 @@
 - [ ] Add VS Code devcontainer.json for reproducible editor env
 - [ ] Add CODEOWNERS + CONTRIBUTING.md stub
 - [ ] Write scripts/seed-dev-data.sh placeholder
-- [ ] Verify aws s3 ls works against MiniStack container (via AWS_ENDPOINT_URL)
-- [ ] Add docker-compose healthcheck block for ministack service
+- [x] Verify aws s3 ls works against MiniStack container (via AWS_ENDPOINT_URL)
+- [x] Add docker-compose healthcheck block for ministack service
 - [ ] Document 'Quickstart: git clone → make up → curl /health' in README
 
 ## Phase 1 — System Design

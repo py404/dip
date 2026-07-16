@@ -10,7 +10,7 @@ export AWS_ENDPOINT_URL=http://localhost:4566
 if aws --endpoint-url=$AWS_ENDPOINT_URL secretsmanager describe-secret --secret-id dip-secrets 2>/dev/null; then
     echo "Secrets already exist: dip-secrets"
 else
-    secrets=$(jq -R -s 'split("\n") | map(select(length > 0 and (startswith("#") | not))) | map(split("=")) | map({(.[0]): .[1]}) | add' < ./.env)
+    secrets=$(jq -R -s 'split("\n") | map(select(length > 0 and (startswith("#") | not))) | map(split("=")) | map({(.[0]): .[1]}) | add' < ./.env.local)
     aws --endpoint-url=$AWS_ENDPOINT_URL secretsmanager create-secret --name dip-secrets --secret-string "$secrets"
     echo "Successfully created secrets: dip-secrets"
 fi
