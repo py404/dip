@@ -1,0 +1,1008 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "multi_tenant_demo_corpus",
+        "label": "Multi-tenant Demo Corpus",
+        "nodes": [
+          "project_context_legal_tenant",
+          "project_context_finance_tenant",
+          "project_context_healthcare_tenant"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "PROJECT-CONTEXT.md"
+      },
+      {
+        "id": "rag_quality_stack",
+        "label": "RAG Quality Assurance Stack",
+        "nodes": [
+          "project_context_ragas",
+          "project_context_langsmith",
+          "project_context_automatic_quality_gates"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "PROJECT-CONTEXT.md"
+      },
+      {
+        "id": "local_infra_stack",
+        "label": "Local-only Infrastructure Stack",
+        "nodes": [
+          "project_context_ollama",
+          "project_context_pgvector",
+          "project_context_redis",
+          "project_context_ministack"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "PROJECT-CONTEXT.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "dip-api",
+      "file_type": "code",
+      "type": "package",
+      "ecosystem": "python",
+      "source_file": "api/pyproject.toml",
+      "source_location": "L1",
+      "version": "0.1.0",
+      "_origin": "ast",
+      "id": "pkg_dip_api",
+      "community": 10,
+      "norm_label": "dip-api"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "api/src/dip_api/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_src_dip_api_init",
+      "community": 7,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "api/src/dip_api/config.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_src_dip_api_config",
+      "community": 4,
+      "norm_label": "config.py"
+    },
+    {
+      "label": "Settings",
+      "file_type": "code",
+      "source_file": "api/src/dip_api/config.py",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "api_src_dip_api_config_settings",
+      "community": 4,
+      "norm_label": "settings"
+    },
+    {
+      "label": "BaseSettings",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "basesettings",
+      "community": 4,
+      "norm_label": "basesettings"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "api/src/dip_api/main.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_src_dip_api_main",
+      "community": 2,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "health_check()",
+      "file_type": "code",
+      "source_file": "api/src/dip_api/main.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "api_src_dip_api_main_health_check",
+      "community": 2,
+      "norm_label": "health_check()"
+    },
+    {
+      "label": "Health check endpoint to verify that the API is running.",
+      "file_type": "rationale",
+      "source_file": "api/src/dip_api/main.py",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "api_src_dip_api_main_rationale_8",
+      "community": 2,
+      "norm_label": "health check endpoint to verify that the api is running."
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "api/tests/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_tests_init",
+      "community": 8,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "test_health.py",
+      "file_type": "code",
+      "source_file": "api/tests/test_health.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "api_tests_test_health",
+      "community": 2,
+      "norm_label": "test_health.py"
+    },
+    {
+      "label": "test_health_returns_200()",
+      "file_type": "code",
+      "source_file": "api/tests/test_health.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "api_tests_test_health_test_health_returns_200",
+      "community": 2,
+      "norm_label": "test_health_returns_200()"
+    },
+    {
+      "label": "dip",
+      "file_type": "code",
+      "type": "package",
+      "ecosystem": "python",
+      "source_file": "pyproject.toml",
+      "source_location": "L1",
+      "version": "0.1.0",
+      "_origin": "ast",
+      "id": "pkg_dip",
+      "community": 9,
+      "norm_label": "dip"
+    },
+    {
+      "label": "ministack-init.sh",
+      "file_type": "code",
+      "source_file": "scripts/ministack-init.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "scripts_ministack_init",
+      "community": 6,
+      "norm_label": "ministack-init.sh"
+    },
+    {
+      "label": "ministack-init.sh script",
+      "file_type": "code",
+      "source_file": "scripts/ministack-init.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "scripts_ministack_init_sh__entry",
+      "community": 6,
+      "norm_label": "ministack-init.sh script"
+    },
+    {
+      "label": "DIP Platform",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_dip_platform",
+      "community": 0,
+      "norm_label": "dip platform"
+    },
+    {
+      "label": "Multi-tenant Agentic RAG",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_multi_tenant_rag",
+      "community": 0,
+      "norm_label": "multi-tenant agentic rag"
+    },
+    {
+      "label": "Hybrid Retrieval (dense + sparse + RRF)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_hybrid_retrieval",
+      "community": 1,
+      "norm_label": "hybrid retrieval (dense + sparse + rrf)"
+    },
+    {
+      "label": "Agentic Retrieval-Generation Loop",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_agentic_retrieval_loop",
+      "community": 1,
+      "norm_label": "agentic retrieval-generation loop"
+    },
+    {
+      "label": "Guarded Generation",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_guarded_generation",
+      "community": 1,
+      "norm_label": "guarded generation"
+    },
+    {
+      "label": "Automatic Quality Gates",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_automatic_quality_gates",
+      "community": 5,
+      "norm_label": "automatic quality gates"
+    },
+    {
+      "label": "Multi-tenancy (Tenant Isolation)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_multi_tenancy",
+      "community": 1,
+      "norm_label": "multi-tenancy (tenant isolation)"
+    },
+    {
+      "label": "User Feedback Loop",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_user_feedback_loop",
+      "community": 0,
+      "norm_label": "user feedback loop"
+    },
+    {
+      "label": "Prefect (Workflow Orchestration)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_prefect",
+      "community": 0,
+      "norm_label": "prefect (workflow orchestration)"
+    },
+    {
+      "label": "Docling (Multi-modal Document Parser)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_docling",
+      "community": 0,
+      "norm_label": "docling (multi-modal document parser)"
+    },
+    {
+      "label": "Ollama (Local LLM + Embeddings)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_ollama",
+      "community": 0,
+      "norm_label": "ollama (local llm + embeddings)"
+    },
+    {
+      "label": "pgvector (Postgres + Vector)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_pgvector",
+      "community": 0,
+      "norm_label": "pgvector (postgres + vector)"
+    },
+    {
+      "label": "Redis (Semantic Query Cache)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_redis",
+      "community": 0,
+      "norm_label": "redis (semantic query cache)"
+    },
+    {
+      "label": "MiniStack (Cloud Emulation S3/SQS/SM)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_ministack",
+      "community": 3,
+      "norm_label": "ministack (cloud emulation s3/sqs/sm)"
+    },
+    {
+      "label": "LangGraph (Agent Graph Orchestration)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_langgraph",
+      "community": 1,
+      "norm_label": "langgraph (agent graph orchestration)"
+    },
+    {
+      "label": "RAGAs (Faithfulness + Recall Eval)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_ragas",
+      "community": 5,
+      "norm_label": "ragas (faithfulness + recall eval)"
+    },
+    {
+      "label": "LangSmith (Tracing)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_langsmith",
+      "community": 5,
+      "norm_label": "langsmith (tracing)"
+    },
+    {
+      "label": "Legal Tenant (Contract Review)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_legal_tenant",
+      "community": 0,
+      "norm_label": "legal tenant (contract review)"
+    },
+    {
+      "label": "Finance Tenant (Policy Q&A)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_finance_tenant",
+      "community": 0,
+      "norm_label": "finance tenant (policy q&a)"
+    },
+    {
+      "label": "Healthcare Tenant (Clinical Guidelines)",
+      "file_type": "concept",
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "project_context_healthcare_tenant",
+      "community": 1,
+      "norm_label": "healthcare tenant (clinical guidelines)"
+    },
+    {
+      "label": "API Service (Docker Compose)",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docker_compose_api_service",
+      "community": 3,
+      "norm_label": "api service (docker compose)"
+    },
+    {
+      "label": "MiniStack Service (Docker Compose)",
+      "file_type": "document",
+      "source_file": "docker-compose.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docker_compose_ministack_service",
+      "community": 3,
+      "norm_label": "ministack service (docker compose)"
+    },
+    {
+      "label": "Phase 0: Scaffolding & Bootstrap",
+      "file_type": "document",
+      "source_file": "TASKS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_phase_0",
+      "community": 3,
+      "norm_label": "phase 0: scaffolding & bootstrap"
+    },
+    {
+      "label": "Phase 1: System Design",
+      "file_type": "document",
+      "source_file": "TASKS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "tasks_phase_1",
+      "community": 1,
+      "norm_label": "phase 1: system design"
+    },
+    {
+      "label": "Ruff (Lint + Format Hook)",
+      "file_type": "concept",
+      "source_file": ".pre-commit-config.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "pre_commit_config_ruff",
+      "community": 0,
+      "norm_label": "ruff (lint + format hook)"
+    },
+    {
+      "label": "ty (Type Check Hook)",
+      "file_type": "concept",
+      "source_file": ".pre-commit-config.yaml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "pre_commit_config_ty",
+      "community": 0,
+      "norm_label": "ty (type check hook)"
+    },
+    {
+      "label": "DIP README Overview",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_dip_overview",
+      "community": 0,
+      "norm_label": "dip readme overview"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/dip_api/config.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_dip_api_config",
+      "target": "api_src_dip_api_config_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/dip_api/config.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_dip_api_config_settings",
+      "target": "basesettings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/dip_api/main.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_dip_api_main",
+      "target": "api_src_dip_api_main_health_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/tests/test_health.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_tests_test_health",
+      "target": "api_src_dip_api_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/src/dip_api/main.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_src_dip_api_main_rationale_8",
+      "target": "api_src_dip_api_main_health_check",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/tests/test_health.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "api_tests_test_health",
+      "target": "api_tests_test_health_test_health_returns_200",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/ministack-init.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_ministack_init",
+      "target": "scripts_ministack_init_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docker-compose.yml",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "docker_compose_api_service",
+      "target": "project_context_dip_platform"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": ".pre-commit-config.yaml",
+      "source_location": null,
+      "weight": 0.75,
+      "source": "pre_commit_config_ruff",
+      "target": "project_context_dip_platform"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": ".pre-commit-config.yaml",
+      "source_location": null,
+      "weight": 0.75,
+      "source": "pre_commit_config_ty",
+      "target": "project_context_dip_platform"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_agentic_retrieval_loop"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_automatic_quality_gates"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_docling"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_finance_tenant"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_guarded_generation"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_healthcare_tenant"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_langsmith"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_legal_tenant"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_ministack"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_multi_tenancy"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_multi_tenant_rag"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_ollama"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_pgvector"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_prefect"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_ragas"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_redis"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_dip_platform",
+      "target": "project_context_user_feedback_loop"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "readme_dip_overview",
+      "target": "project_context_dip_platform"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "TASKS.md",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "tasks_phase_0",
+      "target": "project_context_dip_platform"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_agentic_retrieval_loop",
+      "target": "project_context_hybrid_retrieval"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_agentic_retrieval_loop",
+      "target": "project_context_langgraph"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_guarded_generation",
+      "target": "project_context_agentic_retrieval_loop"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "project_context_healthcare_tenant",
+      "target": "project_context_agentic_retrieval_loop"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tasks_phase_1",
+      "target": "project_context_agentic_retrieval_loop"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 0.85,
+      "source": "project_context_automatic_quality_gates",
+      "target": "project_context_langsmith"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "project_context_automatic_quality_gates",
+      "target": "project_context_ragas"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tasks_phase_1",
+      "target": "project_context_multi_tenancy"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docker-compose.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docker_compose_ministack_service",
+      "target": "project_context_ministack"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TASKS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tasks_phase_0",
+      "target": "project_context_ministack"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docker-compose.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docker_compose_api_service",
+      "target": "docker_compose_ministack_service"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "multi_tenant_demo_corpus",
+      "label": "Multi-tenant Demo Corpus",
+      "nodes": [
+        "project_context_legal_tenant",
+        "project_context_finance_tenant",
+        "project_context_healthcare_tenant"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md"
+    },
+    {
+      "id": "rag_quality_stack",
+      "label": "RAG Quality Assurance Stack",
+      "nodes": [
+        "project_context_ragas",
+        "project_context_langsmith",
+        "project_context_automatic_quality_gates"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "PROJECT-CONTEXT.md"
+    },
+    {
+      "id": "local_infra_stack",
+      "label": "Local-only Infrastructure Stack",
+      "nodes": [
+        "project_context_ollama",
+        "project_context_pgvector",
+        "project_context_redis",
+        "project_context_ministack"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PROJECT-CONTEXT.md"
+    }
+  ],
+  "built_at_commit": "63d18abb843f1813edddcf5235861fbbdecb047a"
+}
