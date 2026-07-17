@@ -7,13 +7,6 @@ requires-python = ">=3.11"
 [tool.uv.workspace]
 members = ["api"]
 
-[tool.ruff]
-line-length = 88
-target-version = "py311"
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "N", "W", "UP"]
-
 [tool.ty.environment]
 python-version = "3.11"
 
@@ -27,5 +20,6 @@ asyncio_mode = "auto"
 
 [dependency-groups]
 dev = [
+    "ruff>=0.15.22",
     "ty>=0.0.59",
 ]

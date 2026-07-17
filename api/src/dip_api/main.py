@@ -1,6 +1,18 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 
-app = FastAPI(title="DIP API", version="0.1.0")
+from dip_api.config import Settings
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    settings = Settings()
+    app.state._state["settings"] = settings
+    yield
+
+
+app = FastAPI(title="DIP API", version="0.1.0", lifespan=lifespan)
 
 
 @app.get("/health")
