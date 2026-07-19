@@ -24,7 +24,12 @@ _Diagrams added in Phase 1._
 
 ## Quickstart
 
-_Added once the Docker Compose stack boots end-to-end._
+### API
+
+1. Clone the repo
+2. Copy `.env.example` to `.env.local` and update your environment variables as fit
+3. Run: `make up`
+4. Check API health at: `curl http://localhost:8000/health`
 
 ## Tech Stack
 
