@@ -4,39 +4,39 @@
 
 ### Repo & tooling init
 
-- [ ] git init + create GitHub repo (private)
-- [ ] Add .gitignore (Python, Docker, IDE, macOS)
-- [ ] Add README.md skeleton (title, badges placeholder, TOC)
-- [ ] Add LICENSE (MIT)
-- [ ] Install uv for Python dependency management
-- [ ] Create pyproject.toml with ruff + mypy + pytest config
-- [ ] Install pre-commit; add .pre-commit-config.yaml (ruff, mypy, end-of-file-fixer, trailing-whitespace)
-- [ ] Add .editorconfig
-- [ ] Create folder structure: src/, tests/, docs/, infra/, scripts/
-- [ ] Scaffold FastAPI app with single /health endpoint
-- [ ] Write first pytest test asserting /health returns 200
-- [ ] Add Makefile targets: dev, test, lint, up, down, logs, clean
-- [ ] Create .env.example with placeholder vars
-- [ ] Add pydantic-settings config loader reading .env
-- [ ] Write Dockerfile.api (multi-stage: builder + slim runtime)
-- [ ] Write docker-compose.yml skeleton with api service only
-- [ ] Run make up && curl /health to confirm skeleton boots
-- [ ] Commit initial scaffold as first commit
+- [x] git init + create GitHub repo (private)
+- [x] Add .gitignore (Python, Docker, IDE, macOS)
+- [x] Add README.md skeleton (title, badges placeholder, TOC)
+- [x] Add LICENSE (MIT)
+- [x] Install uv for Python dependency management
+- [x] Create pyproject.toml with ruff + mypy + pytest config
+- [x] Install pre-commit; add .pre-commit-config.yaml (ruff, mypy, end-of-file-fixer, trailing-whitespace)
+- [x] Add .editorconfig
+- [x] Create folder structure: src/, tests/, docs/, infra/, scripts/
+- [x] Scaffold FastAPI app with single /health endpoint
+- [x] Write first pytest test asserting /health returns 200
+- [x] Add Makefile targets: dev, test, lint, up, down, logs, clean
+- [x] Create .env.example with placeholder vars
+- [x] Add pydantic-settings config loader reading .env
+- [x] Write Dockerfile.api (multi-stage: builder + slim runtime)
+- [x] Write docker-compose.yml skeleton with api service only
+- [x] Run make up && curl /health to confirm skeleton boots
+- [x] Commit initial scaffold as first commit
 
 ### Local secrets & config baseline
 
-- [ ] Add docker-compose service: localstack (S3, SQS, Secrets Manager, STS)
-- [ ] Write scripts/localstack-init.sh to bootstrap S3 bucket + SQS queue on container start
-- [ ] Add awslocal alias + Makefile target for LocalStack CLI calls
-- [ ] Add startup config validation (fail fast on missing required env vars)
-- [ ] Split .env.local vs .env.example
-- [ ] Add asdf .tool-versions to pin Python/Node versions
-- [ ] Add VS Code devcontainer.json for reproducible editor env
-- [ ] Add CODEOWNERS + CONTRIBUTING.md stub
-- [ ] Write scripts/seed-dev-data.sh placeholder
-- [ ] Verify awslocal s3 ls works against LocalStack container
-- [ ] Add docker-compose healthcheck block for localstack service
-- [ ] Document 'Quickstart: git clone → make up → curl /health' in README
+- [x] Add docker-compose service: ministack (S3, SQS, Secrets Manager, STS)
+- [x] Write scripts/ministack-init.sh to bootstrap S3 bucket + SQS queue on container start
+- [x] Set AWS_ENDPOINT_URL=<http://localhost:4566> in .env.local and export in Makefile for local AWS CLI calls
+- [x] Add startup config validation (fail fast on missing required env vars)
+- [x] Split .env.local vs .env.example
+- [x] Add asdf .tool-versions to pin Python/Node versions
+- [x] Add VS Code devcontainer.json for reproducible editor env
+- [x] Add CODEOWNERS.md
+- [x] Write scripts/seed-dev-data.sh placeholder
+- [x] Verify aws s3 ls works against MiniStack container (via AWS_ENDPOINT_URL)
+- [x] Add docker-compose healthcheck block for ministack service
+- [x] Update quick start steps in README
 
 ## Phase 1 — System Design
 
@@ -56,7 +56,7 @@
 ### 3-level diagrams
 
 - [ ] Draw context diagram (user, API, external LLM/embedding provider)
-- [ ] Draw container diagram (API, worker, pgvector, redis, LocalStack)
+- [ ] Draw container diagram (API, worker, pgvector, redis, MiniStack)
 - [ ] Draw sequence diagram — query → retrieval → grade → (reformulate/retry) → generation → feedback
 - [ ] Draw sequence diagram — document upload → chunk → embed → index
 - [ ] Export diagrams as mermaid.md in docs/diagrams/
@@ -108,7 +108,7 @@
 - [ ] Add postgres + pgvector container to docker-compose.yml
 - [ ] Add redis container
 - [ ] Add ollama container (pull qwen3:14b + nomic-embed-text)
-- [ ] Add localstack container (S3, SQS, Secrets Manager)
+- [ ] Add ministack container (S3, SQS, Secrets Manager)
 - [ ] Add prefect server + worker (agent) containers for pipeline orchestration
 - [ ] Add jaeger container for local tracing
 - [ ] Add prometheus + grafana containers
@@ -126,7 +126,7 @@
 
 - [ ] Build document upload endpoint (multipart file upload)
 - [ ] Validate file type + size limits on upload
-- [ ] Store raw document in LocalStack S3 bucket
+- [ ] Store raw document in MiniStack S3 bucket
 - [ ] Integrate Docling for multi-modal document parsing (PDF/DOCX/PPTX/images → structured text)
 - [ ] Extract tables via Docling TableFormer, preserve as structured markdown/JSON
 - [ ] Extract images/figures via Docling, store alongside chunk metadata (multi-modal support)
@@ -309,7 +309,7 @@
 - [ ] Write Service templates (ClusterIP) for API + worker metrics
 - [ ] Write ConfigMap template per tenant config
 - [ ] Write PVC template for pgvector data persistence
-- [ ] Write Secret template sourced from LocalStack Secrets Manager
+- [ ] Write Secret template sourced from MiniStack Secrets Manager
 - [ ] Parameterize replica counts, resource requests/limits in values.yaml
 - [ ] Create values-local.yaml matching docker-compose env vars
 - [ ] Run helm lint to validate chart syntax
@@ -324,7 +324,7 @@
 
 - [ ] Add HPA on ingestion worker keyed on Prefect pending flow-run count (custom metric)
 - [ ] Add CronJob for nightly eval runner
-- [ ] Wire Secret retrieval via LocalStack SM through External Secrets or init container
+- [ ] Wire Secret retrieval via MiniStack SM through External Secrets or init container
 - [ ] Set resource requests/limits based on local load testing
 - [ ] Add PodDisruptionBudget for API deployment
 - [ ] Add liveness + readiness probes to all deployments
@@ -353,32 +353,32 @@
 - [ ] Tear down cluster and rebuild from scratch to prove reproducibility
 - [ ] Document full 'cluster from zero' runbook in docs/helm.md
 
-## Phase 5 — Terraform + LocalStack (Simulated Cloud)
+## Phase 5 — Terraform + MiniStack (Simulated Cloud)
 
-### Terraform modules (LocalStack-targeted)
+### Terraform modules (MiniStack-targeted)
 
 - [ ] Install tflocal wrapper (or configure provider endpoints manually)
-- [ ] Write backend.tf using local state (or S3 backend pointed at LocalStack)
-- [ ] Write provider.tf with LocalStack endpoint overrides for all services
+- [ ] Write backend.tf using local state (or S3 backend pointed at MiniStack)
+- [ ] Write provider.tf with MiniStack endpoint overrides for all services
 - [ ] Write module: S3 bucket for document storage
 - [ ] Write module: SQS queue for ingestion events
 - [ ] Write module: Secrets Manager entries for API keys
-- [ ] Write module: RDS Postgres instance (pgvector) against LocalStack Pro emulation or documented as AWS-parity stub
+- [ ] Write module: RDS Postgres instance (pgvector) against MiniStack emulation or documented as AWS-parity stub
 - [ ] Write variables.tf + outputs.tf for each module
 - [ ] Add terraform fmt + validate as pre-commit hook
-- [ ] Write README explaining LocalStack vs real-AWS parity boundaries
+- [ ] Write README explaining MiniStack vs real-AWS parity boundaries
 - [ ] Add terraform-docs generation for module documentation
 - [ ] Pin terraform + provider versions in versions.tf
 - [ ] Add tfsec or checkov static scan on IaC
 - [ ] Document module dependency graph
 
-### Deploy + validate against LocalStack
+### Deploy + validate against MiniStack
 
-- [ ] Run terraform init against LocalStack endpoints
+- [ ] Run terraform init against MiniStack endpoints
 - [ ] Run terraform plan and review resource diff
 - [ ] Run terraform apply — clean run with zero manual steps
-- [ ] Verify awslocal s3 ls / sqs list-queues shows created resources
-- [ ] Run smoke test hitting app config sourced from LocalStack Secrets Manager
+- [ ] Verify aws s3 ls / sqs list-queues shows created resources (via AWS_ENDPOINT_URL)
+- [ ] Run smoke test hitting app config sourced from MiniStack Secrets Manager
 - [ ] Run terraform destroy and confirm full teardown
 - [ ] Re-run terraform apply from scratch to prove idempotency
 - [ ] Document 'zero real AWS cost' proof in docs/iac.md

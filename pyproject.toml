@@ -1,0 +1,25 @@
+[project]
+name = "dip"
+version = "0.1.0"
+description = "Adaptive Agentic Document Intelligence Platform"
+requires-python = ">=3.11"
+
+[tool.uv.workspace]
+members = ["api"]
+
+[tool.ty.environment]
+python-version = "3.11"
+
+[tool.ty.src]
+include = ["api/src"]
+
+[tool.pytest.ini_options]
+testpaths = ["api/tests", "tests"]
+addopts = "-v --tb=short"
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.22",
+    "ty>=0.0.59",
+]

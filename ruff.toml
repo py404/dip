@@ -1,0 +1,66 @@
+# https://docs.astral.sh/ruff/configuration/
+
+line-length = 88
+target-version = "py311"
+
+# https://docs.astral.sh/ruff/settings
+[lint]
+# allow fix for all enabled rules (when `--fix`) is provided
+fixable = ["ALL"]
+ignore = [
+  "ANN002", # type for *args
+  "ANN003", # type for **kwargs
+  "B008", # Required for dependency injection
+  "D415", # Closing punctuation
+  "DOC502", # can't figure out the exception types
+  "E712", # Comparison to True or False can be explicit
+  "PLC1901", # comparison to "" not allowed
+  "PLC2701", # Conflicts with the relative import rule, also stoopid
+  "PLW0717", # pattern we use a lot for api error handling
+  "RET504", # define variable before return
+  "TRY002", # can't use default Exception. Probably a good idea but we're not ready.
+  "TRY003", # long error messages
+  "TRY300", # return in else block, too opinionated
+  "TRY301" # Abstract `raise` to an inner function
+]
+preview = true
+# Keep the shared baseline intentionally narrow as the monorepo grows.
+select = ["E", "F", "I", "N", "W", "UP"]
+unfixable = []
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[lint.mccabe]
+max-complexity = 10
+
+[lint.per-file-ignores]
+"*__init__.py" = [
+  "D104" # docstring not required in blank init file
+]
+"*plugins*" = [
+  "S101" # Required to verify the apigw urls without verbosity. Not depended on for security.
+]
+"*test*" = [
+  # for all tests, ignore the following
+  "DOC201", # docstring missing returns
+  "PLC0415", # imports in tests
+  "RUF029", # Async that doesn't call await (needed for many mocks)
+  "S101", # use of assert detected
+  "S105", # hardcoded test tokens
+  "S106", # hardcoded test tokens in arguments
+  "SLF001" # private variable access
+]
+
+[lint.pycodestyle]
+max-doc-length = 120
+max-line-length = 120
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.pylint]
+max-args = 10
+max-branches = 15
+max-returns = 10
+max-statements = 60
